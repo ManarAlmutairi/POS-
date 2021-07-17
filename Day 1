@@ -1,0 +1,69 @@
+def main():
+    a = int(input("Are you a .. \n1.Customer\n2.Manger\nEnter here:"))
+    while True:
+        if a == 1:
+            MyMenu()
+        elif a == 2:
+            #open Manger
+            print("Manger")
+        else:
+            print("*"*5, "INVALID INPUT","*"*5)
+def MyMenu():
+     choice = str(input("What would you like to do?\n1.New order\n2.Cart\n3.Checkout\n\n(B)Back        (E)Exit \nEnter here:").upper())
+     while True:
+        if choice == '1':
+            NewOrder()
+        elif choice == '2':
+            #open Manger
+            print("Manger")
+        elif choice == '3':
+            #open Manger
+            print("Manger")
+        elif choice == 'B':
+            #open Manger
+            print("Manger")
+        elif choice == 'E':
+            #open Manger
+            print("Manger")
+        else:
+            print("*"*5, "INVALID INPUT","*"*5)
+def ReadAllFiles():
+    #MainDishesFile = open("MainDishes.txt", "r")
+    AppetizersFile = open("Appetizers.txt", "r")
+    DrinksFile = open("Drinks.txt", "r")
+    DessertsFile = open("Desserts.txt", "r")
+
+    #MainDisheDict = dict((line.strip().split(',') for line in MainDishesFile))
+    global AppetizersDict
+    AppetizersDict = dict((line.strip().split(',') for line in AppetizersFile))
+    DrinksDict = dict((line.strip().split(',') for line in DrinksFile))
+    DessrertsDict = dict((line.strip().split(',') for line in DessertsFile))
+
+def NewOrder():
+        choice = str(input("What would you like to do?\n1.Main Dishes\n2.Appetizers\n3.Drinks\n4.Desserts\n\n(B)Back        (E)Exit \nEnter here:").upper())
+        while True:
+            if choice == '1':
+                #open MyMenu
+                print("MianDishes")
+            elif choice == '2':
+                #open Manger
+                print("*"*5,"Appetizers","*" * 5)
+                #OrderAppet()
+            elif choice == '3':
+                #open Manger
+                print("Manger")
+            elif choice == 'B':
+                #open Manger
+                print("Manger")
+            elif choice == 'E':
+                #open Manger
+                print("Manger")
+            else:
+                print("*"*5, "INVALID INPUT","*"*5)
+
+  
+ReadAllFiles()
+for i in AppetizersDict.keys:
+        print(i)
+
+main()
